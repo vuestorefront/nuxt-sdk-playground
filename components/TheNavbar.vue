@@ -8,18 +8,23 @@
             <img src="/img/logo.svg" alt="Sf Logo" class="w-8 h-8 mr-4 md:w-[12.5rem] md:h-[1.75rem]" />
           </picture>
         </NuxtLink>
-        <SfButton
+        
+          <SfButton
           class="block !px-2 mr-auto text-white bg-transparent hover:bg-primary-800 hover:text-white active:bg-primary-900 active:text-white font-body"
           type="button"
           variant="tertiary"
         >
           <template #prefix>
-            <SfIconMenu />
+            <NuxtLink to="/">
+            <SfIconHome />
+          </NuxtLink>
           </template>
   
         </SfButton>
+       
+        
         <nav>
-          <NuxtLink to="https://google.com" class="flex flex-row flex-nowrap">
+          <NuxtLink :to="docsUrl" class="flex flex-row flex-nowrap">
             <SfButton
               v-for="actionItem in actionItems"
               :key="actionItem.ariaLabel"
@@ -31,7 +36,7 @@
               <template #prefix>
                 <Component :is="actionItem.icon" />
               </template>
-              <span v-if="actionItem.role === 'login'" class="hidden md:inline-flex">{{ actionItem.label }}</span>
+              <span class="hidden md:inline-flex">{{ actionItem.label }}</span>
             </SfButton>
             
           </NuxtLink>
@@ -41,7 +46,10 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { SfButton, SfIconShoppingCart, SfIconFavorite, SfIconPerson, SfIconMenu, SfIconTune, SfIconOpenInNew } from '@storefront-ui/vue';
+import { SfButton, SfIconShoppingCart, SfIconFavorite, SfIconPerson, SfIconMenu, SfIconTune, SfIconOpenInNew, SfIconHome } from '@storefront-ui/vue';
+
+//todo: add a link to the docs
+const docsUrl = 'https://docs.vuestorefront.io/sdk-sapcc/key-concepts/sdk.html'
 
 const actionItems = [
   {
