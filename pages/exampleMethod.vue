@@ -1,5 +1,5 @@
 <template>
-<div class="flex justify-center items-center h-screen">
+  <div class="flex justify-center items-center h-screen">
     <div class="p-5 w-96">
       <p class="typography-text-xs md:typography-text-sm font-bold tracking-widest text-neutral-500 uppercase">
         Let's go
@@ -8,11 +8,14 @@
         Build something amazing
       </h1>
       <p>
-      exampleMethod()
+        exampleMethod()
       </p>
-
-       <PrettyJson />
-   
+      <div class="box">
+        <!-- <JsonViewer :value="jsonData" copyable boxed sort theme="light"  @onKeyClick="keyClick"/> -->
+        <h4>Response</h4>
+        <JsonViewer class="min-h-[800px] min-w-[500px]" :value="res" expandDepth="5" expanded copyable boxed sort
+          theme="dark" />
+      </div>
       <div class="flex flex-col md:flex-row gap-4 mt-6">
         <SfButton @click="callEndpoint" size="lg"> call </SfButton>
         <SfButton @click="reset" size="lg" variant="secondary" class="bg-white"> reset </SfButton>
@@ -23,16 +26,19 @@
 
 <script lang="ts" setup>
 import { SfButton } from '@storefront-ui/vue';
-import {sdk} from '~/sdk.config';
+import { sdk } from '~/sdk.config';
+import { JsonViewer } from "vue3-json-viewer"
+import "vue3-json-viewer/dist/index.css";
 
-const res = ref('waiting to call exampleMethod() ...');
+const res = useState('waiting to call exampleMethod() ...');
 
 async function callEndpoint() {
-const {data} = await sdk.boilerplate.exampleMethod('test');
-res.value = data
+  const { data } = await sdk.boilerplate.exampleMethod('test');
+  res.value = data
 }
 
 function reset() {
-res.value = 'waiting to call exampleMethod() ...'}
+  res.value = 'waiting to call exampleMethod() ...'
+}
 </script>
 
