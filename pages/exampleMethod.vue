@@ -10,9 +10,9 @@
       <p>
       exampleMethod()
       </p>
-      <p class="typography-text-base md:typography-text-lg bg-slate-200 p-5">
-        {{ res }}
-      </p>
+
+       <PrettyJson />
+   
       <div class="flex flex-col md:flex-row gap-4 mt-6">
         <SfButton @click="callEndpoint" size="lg"> call </SfButton>
         <SfButton @click="reset" size="lg" variant="secondary" class="bg-white"> reset </SfButton>

@@ -27,7 +27,7 @@
             npx vsf-cli add endpoint &lt;endpoint-name>
           </p>
         </strong>
-        <Accordion />
+        <MethodList />
    
       </div>
     </SfDrawer>

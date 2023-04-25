@@ -1,6 +1,6 @@
 <template>
   <div class="flex justify-center items-center h-screen m-10">
-    <PrettyJson />
+   choose a method
   </div>
 </template>
 

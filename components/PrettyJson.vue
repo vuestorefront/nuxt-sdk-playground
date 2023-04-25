@@ -12,11 +12,8 @@ import {JsonViewer} from "vue3-json-viewer"
 import "vue3-json-viewer/dist/index.css";
 import { reactive, ref } from "vue";
 
-
-
 const jsonData = useState('methodResult', () => 'waiting ...');
 
-// const jsonData = reactive(props.obj);
 const keyClick = (keyName)=>{
   console.log(keyName,"it was click")
 }

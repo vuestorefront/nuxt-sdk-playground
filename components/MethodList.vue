@@ -1,23 +1,9 @@
 <template>
  
     <div class=" ">
-      <SfAccordionItem   v-for="({ id, methodName }, index) in accordionItems" :key="id" v-model="opened[index]">
-      <template #summary>
-        <p class="p-4 font-medium hover:bg-primary-100 active:primary-100">
-
-          <div>
-           {{ methodName  }}
-          </div>
-        </p>
-      </template>
-      <div class=" flex p-4 bg-white border-neutral-300 border-b">
-        <SfButton
-          type="button"
-          @click="callEndpoint(methodName)"
-        >
-        call {{ methodName }}
-        </SfButton>
-        <NuxtLink :to="'/' + methodName" class="flex flex-row flex-nowrap">
+      <div v-for="method in methods">
+      <div v-if="method.id !== '/'" class=" flex p-4 bg-white border-neutral-300 border-b">
+        <NuxtLink :to="'/' + method.name" class="flex flex-row flex-nowrap">
           <SfButton
             aria-label="open-method"
             variant="tertiary"
@@ -26,15 +12,11 @@
             <template #prefix>
               <Component :is="SfIconOpenInNew" />
             </template>
-            <span class="hidden md:inline-flex">open</span>
+            <span class="hidden md:inline-flex">{{ method.name }} </span>
           </SfButton>
-          
         </NuxtLink>
-       
-       
-
       </div>
-    </SfAccordionItem>
+    </div>
   </div>
   
   
@@ -67,10 +49,10 @@ const routes = router.getRoutes()
 
 
 //add routes to accordionItems
-const accordionItems = routes.map((route) => {
+const methods = routes.map((route) => {
   return {
     id: route.path,
-    methodName: route.path.replace("/", ""),
+    name: route.path.replace("/", ""),
   }
 })
 
