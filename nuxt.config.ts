@@ -9,8 +9,5 @@ vite: {
       }
     }
     
-},
-analyze: {
-  analyzerMode: 'static'
 }
 })

@@ -1,28 +1,10 @@
 <template>
-<div class="flex justify-center items-center h-screen">
-    <div class="p-5 w-105">
-      <p class="typography-text-xs md:typography-text-sm font-bold tracking-widest text-neutral-500 uppercase">
-        Let's go
-      </p>
-      <h1 class="typography-headline-2 md:typography-headline-1 md:leading-[67.5px] font-bold mt-2 mb-4">
-        Build something amazing
-      </h1>
-      <div class="my-12">
-        <div>
-          To create a new enpoint, run:
-         <br>
-         <p class="typography-text-base md:typography-text-lg bg-slate-300 p-5">
-          npx vsf-cli add endpoint &lt;endpoint-name>
-         </p>
-        </div>
-      </div>
-      <p>
-      Here's a list of all your endpoints:
-      </p>
-      <p class="typography-text-base md:typography-text-lg bg-slate-200 p-5" v-for="route in routes">
-      <NuxtLink v-if="route.path !== '/'" :to="route.path"><SfLink>{{ route.path }}</SfLink></NuxtLink>    
-      </p>
+  <div class="flex justify-center items-center h-screen m-10">
+    
+    <div class="w-[500px] bg-neutral-100">
+      <div> {{str}}</div>
     </div>
+    
   </div>
 </template>
 
@@ -30,5 +12,20 @@
 import { SfLink } from '@storefront-ui/vue';
 const router = useRouter()
 const routes = router.getRoutes()
+
+
+const res = useState('methodResult', () => 'waiting ...');
+var str = computed(() => JSON.stringify(res.value,null,2));
+
+
 </script>
 
+<style>
+pre {outline: 1px solid #ccc; padding: 5px; margin: 5px; }
+.string { color: green; }
+.number { color: darkorange; }
+.boolean { color: blue; }
+.null { color: magenta; }
+.key { color: rgb(5, 36, 14); }
+
+</style>

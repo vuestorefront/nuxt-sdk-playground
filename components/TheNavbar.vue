@@ -46,7 +46,7 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { SfButton, SfIconShoppingCart, SfIconFavorite, SfIconPerson, SfIconMenu, SfIconTune, SfIconOpenInNew, SfIconHome } from '@storefront-ui/vue';
+import { SfButton, SfIconOpenInNew, SfIconHome } from '@storefront-ui/vue';
 
 //todo: add a link to the docs
 const docsUrl = 'https://docs.vuestorefront.io/sdk-sapcc/key-concepts/sdk.html'
