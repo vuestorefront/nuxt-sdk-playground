@@ -19,5 +19,8 @@
     "@storefront-ui/typography": "^2.0.0",
     "@storefront-ui/vue": "^2.0.0",
     "nuxt": "^3.4.1"
+  },
+  "resolutions": {
+    "consola": "^3.0.0"
   }
 }
