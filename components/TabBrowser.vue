@@ -41,9 +41,6 @@ const selectedTab = ref(0);
 function selectTab(index: number) {
   selectedTab.value = index;
 }
-
-console.log(props.data[selectedTab.value])
-
 </script>
 
 <style></style>
