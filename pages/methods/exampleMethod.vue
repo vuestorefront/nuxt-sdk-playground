@@ -14,7 +14,7 @@
                 <!-- <JsonViewer :value="jsonData" copyable boxed sort theme="light"  @onKeyClick="keyClick"/> -->
                 <h4>Response</h4>
                 <JsonViewer class="min-h-[800px] min-w-[500px]" :value="res" expandDepth="5" expanded copyable boxed sort
-                            theme="dark" />
+                    theme="dark" />
             </div>
             <div class="flex flex-col md:flex-row gap-4 mt-6">
                 <SfButton @click="callEndpoint" size="lg"> call </SfButton>

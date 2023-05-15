@@ -1,14 +1,35 @@
 <template>
-    <div class=" ">
-        <div v-for="method in menuRoutes">
-            <div class=" flex p-4 bg-white border-neutral-300 border-b">
-                <NuxtLink :to="method.path" class="flex flex-row flex-nowrap">
-                    <SfButton aria-label="open-method" variant="tertiary" square>
-                        <template #prefix>
-                            <Component :is="SfIconOpenInNew" />
-                        </template>
-                        <span class="hidden md:inline-flex">{{ method.name }} </span>
-                    </SfButton>
+    <div class="w-full">
+        <div class="overflow-auto pl-4 pr-8 pt-8" :class="{
+            'hidden': !menuRoutes.length,
+            'md:hidden': menuRoutes.length
+        }">
+            <SfScrollable
+                class="items-center [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+                <div v-for="method in menuRoutes" :key="method.name"
+                    class="flex items-center justify-center text-gray-300 border border-neutral-400 h-20 px-4 shrink-0 gap-2">
+                    <NuxtLink :to="method.path" class="flex flex-row">
+                        {{ method.name }}
+                        <SfIconOpenInNew class='text-primary-600 fill-current w-8' />
+                    </NuxtLink>
+                </div>
+            </SfScrollable>
+        </div>
+
+
+        <div v-if="!menuRoutes.length">
+            <div class="text-white mt-4 items-center flex md:flex-col gap-2">
+                <SfIconVisibilityOff class='md:w-12' />
+                No methods available
+            </div>
+        </div>
+
+        <div v-if="menuRoutes.length">
+            <div class='hidden md:flex flex-col border-t mt-2 border-primary-600' v-for="method in menuRoutes"
+                :key="method.name">
+                <NuxtLink :href="method.path" class='text-white flex items-center gap-2 border-b justify-center p-4'>
+                    {{ method.name }}
+                    <SfIconOpenInNew class='text-primary-600 fill-current md:w-8' />
                 </NuxtLink>
             </div>
         </div>
@@ -16,30 +37,14 @@
 </template>
 
 <script lang="ts" setup>
-import { SfAccordionItem, SfIconOpenInNew } from '@storefront-ui/vue';
-import { ref } from 'vue';
-import { SfLink } from '@storefront-ui/vue';
-import { SfButton } from '@storefront-ui/vue';
-import { sdk } from '~/sdk.config';
+import { SfAccordionItem, SfIconOpenInNew, SfIconVisibilityOff, SfScrollable } from '@storefront-ui/vue';
 
 const res = useState('methodResult')
-
-async function callEndpoint(methodName: string) {
-    //ts ignore is needed because the method name is dynamic
-    // @ts-ignore
-    const { data } = await sdk.boilerplate[methodName]('test');
-    res.value = data
-}
 
 type MethodType = {
     id: string;
     name: string;
 };
-function reset() {
-    res.value = 'waiting to call getCart() ...'
-}
-
-const opened = ref<MethodType[]>([]);
 
 const router = useRouter()
 const routes = router.getRoutes()
@@ -57,6 +62,8 @@ routes.map((route) => {
         })
     }
 })
+
+// menuRoutes.value = [];
 
 function inRouteArray(route: string) {
     return menuRoutes.value.some((item) => item.path === route)
