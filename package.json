@@ -17,7 +17,7 @@
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^6.6.5",
     "@storefront-ui/typography": "^2.0.0",
-    "@storefront-ui/vue": "^2.0.0",
+    "@storefront-ui/vue": "^2.2.0",
     "nuxt": "^3.4.2"
   },
   "resolutions": {

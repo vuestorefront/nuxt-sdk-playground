@@ -1,14 +1,8 @@
 <template>
-  <div>
-    <TheNavbar/>
-    <div class="mt-5 flex justify-center items-center">
-      <TheLeftDrawer/>
-
-    <div>
-      <slot/>
-    
-    </div>
-  </div>
-    
+  <div class='flex'>
+    <TheLeftDrawer />
+    <main class='mx-auto'>
+      <slot />
+    </main>
   </div>
 </template>
