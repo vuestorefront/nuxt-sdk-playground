@@ -1,42 +1,25 @@
-# Nuxt 3 Minimal Starter
+# Nuxt Playground for Vue Storefront Integration Boilerplate
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+## Description
 
-## Setup
+Welcome to the Nuxt Playground! This repository serves as a real-world application setting that allows integrators to test, explore, and understand the practical implementation of their integrations with Vue Storefront's integration boilerplate. 
 
-Make sure to install the dependencies:
+***This is meant to be used as part of the integation-boilerplate.***
 
-```bash
-# yarn
-yarn install
+For comprehensive information, guides, and details of the integration boilerplate, please refer to the parent project: [Vue Storefront Integration Boilerplate](https://github.com/vuestorefront/integration-boilerplate).
 
-# npm
-npm install
+## Prerequisites
 
-# pnpm
-pnpm install
-```
+To make the best use of this playground, you should have a basic understanding of the following technologies:
 
-## Development Server
+- [Node.js](https://nodejs.org/)
+- [Nuxt.js](https://nuxt.com/)
+- [Vue Storefront Integration Boilerplate](https://github.com/vuestorefront/integration-boilerplate)
 
-Start the development server on `http://localhost:3000`
+## Getting Started
 
-```bash
-npm run dev
-```
+See: [Vue Storefront Integration Boilerplate](https://github.com/vuestorefront/integration-boilerplate).
 
-## Production
+Remember, this playground is designed to put your integrations to work in a real application scenario. Use it to test, improve and showcase your solutions built upon Vue Storefront's integration boilerplate.
 
-Build the application for production:
-
-```bash
-npm run build
-```
-
-Locally preview production build:
-
-```bash
-npm run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+Happy coding!
