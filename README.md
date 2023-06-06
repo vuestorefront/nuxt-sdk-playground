@@ -4,7 +4,7 @@
 
 Welcome to the Nuxt Playground! This repository serves as a real-world application setting that allows integrators to test, explore, and understand the practical implementation of their integrations with Vue Storefront's integration boilerplate. 
 
-***This is meant to be used as part of the integation-boilerplate.***
+***This is meant to be used as part of the intregation-boilerplate.***
 
 For comprehensive information, guides, and details of the integration boilerplate, please refer to the parent project: [Vue Storefront Integration Boilerplate](https://github.com/vuestorefront/integration-boilerplate).
 
