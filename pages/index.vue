@@ -20,7 +20,7 @@
         <Grid :columns="3">
           <template #1>
             <Card :title="'SDK Documentation'" :description="'General SDK Documentation'"
-              :href="'https://docs.vuestorefront.io'">
+              href="https://docs.vuestorefront.io/sdk/sdk/" target=”_blank”>
               <template #icon>
                 <SfIconViewList class="text-primary-600 w-8" />
               </template>
