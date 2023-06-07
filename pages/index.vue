@@ -49,7 +49,7 @@ const NuxtLink = resolveComponent('NuxtLink');
 const res = useState('waiting to call exampleMethod() ...');
 const tabBrowserData = [{
   language: 'bash', commands: {
-    command: 'yarn create @vue-storefront/cli integration-boilerplate',
+    command: 'npx @vue-storefront/cli add endpoint coolEndpoint',
     description: 'Add new method to the integration'
   }
 }
