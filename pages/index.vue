@@ -34,6 +34,14 @@
               </template>
             </Card>
           </template>
+          <template #3>
+            <Card title="Storefront UI" description="Storefront UI docs"
+              href="https://docs.storefrontui.io/v2/" target=”_blank”>
+              <template #icon>
+                <SfIconViewList class="text-primary-600 w-8" />
+              </template>
+            </Card>
+          </template>
         </Grid>
       </NumberTitle>
     </section>
