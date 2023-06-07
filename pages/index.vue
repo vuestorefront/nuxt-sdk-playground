@@ -28,7 +28,7 @@
           </template>
           <template #2>
             <Card :title="'Integration Boilerplate'" :description="'Integration Boilerplate Repository'"
-              href="https://github.com/vuestorefront/integration-boilerplate">
+              href="https://github.com/vuestorefront/integration-boilerplate" target=”_blank”>
               <template #icon>
                 <SfIconViewList class="text-primary-600 w-8" />
               </template>
